@@ -23,6 +23,12 @@ POSITIVE_WORDS = [
     "chill",
     "relaxed",
     "amazing",
+    "bop", 
+    "proud", 
+    "vibe", 
+    "fantastic",
+    "sick", 
+    "fire"
 ]
 
 NEGATIVE_WORDS = [
@@ -36,6 +42,13 @@ NEGATIVE_WORDS = [
     "stressed",
     "hate",
     "boring",
+    "delayed", 
+    "dropped", 
+    "🥲", 
+    "💀",
+    "crashed", 
+    "failed", 
+    "broke"
 ]
 
 # ---------------------------------------------------------------------
@@ -92,3 +105,37 @@ TRUE_LABELS = [
 #
 # Remember to keep them aligned:
 #   len(SAMPLE_POSTS) == len(TRUE_LABELS)
+
+SAMPLE_POSTS.append("No cap this new album is an absolute bop 💀")
+TRUE_LABELS.append("positive")
+
+# 2. Slang + Mixed Feelings
+SAMPLE_POSTS.append("Lowkey stressed about the midterm but highkey proud of how much I studied")
+TRUE_LABELS.append("mixed")
+
+# 3. Pure Sarcasm (Text implies positive, true intent is negative)
+SAMPLE_POSTS.append("Oh fantastic, my flight got delayed for another four hours")
+TRUE_LABELS.append("negative")
+
+# 4. Melancholic/Gen-Z Humor Emoji
+SAMPLE_POSTS.append("Just dropped my entire lunch on the sidewalk 🥲")
+TRUE_LABELS.append("negative")
+
+# 5. Flat/Matter-of-Fact statement
+SAMPLE_POSTS.append("The package arrived on Thursday afternoon.")
+TRUE_LABELS.append("neutral")
+
+# 6. Ambiguous/Subtle Sarcasm
+SAMPLE_POSTS.append("Wow, what an incredibly useful meeting that could have been an email")
+TRUE_LABELS.append("negative")
+
+# 7. Relieved/Chill Tone
+SAMPLE_POSTS.append("Finally finished that project, time to just vibe for the rest of the night")
+TRUE_LABELS.append("positive")
+
+# 8. Strongly conflicting sentiments
+SAMPLE_POSTS.append("I hate how much I love this terrible reality TV show")
+TRUE_LABELS.append("mixed")
+
+
+assert len(SAMPLE_POSTS) == len(TRUE_LABELS), f"Mismatched data lengths! Posts: {len(SAMPLE_POSTS)}, Labels: {len(TRUE_LABELS)}"
